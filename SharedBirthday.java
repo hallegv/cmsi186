@@ -19,26 +19,28 @@ public class SharedBirthday {
     }
 
     public static double probabilityEstimate(int people, int days, int trials) {
-      if (people < 2) {
-        throw new IllegalArgumentException("At least two people required");
-      }
-      if (trials < 1) {
-        throw new IllegalArgumentException("At least one trial required");
-      }
-      if (days < 1) {
-        throw new IllegalArgumentException("At least one day required");
-      };
+        if (people < 2) {
+            throw new IllegalArgumentException("At least two people required");
+        }
+        if (trials < 1) {
+            throw new IllegalArgumentException("At least one trial required");
+        }
+        if (days < 1) {
+            throw new IllegalArgumentException("At least one day required");
+        };
         double success = 0;
-        for (var i = 0; i < trials; i++){
-          var birthdays = new HashSet<Integer>();
-          for (var j = 0; j < people; j++){
-            int birthday = (int)Math.floor(Math.random() * days);
-            if (birthdays.contains(birthday)) {
-              success++;
-              break;
+        for (var i = 0; i < trials; i++) {
+            var birthdays = new HashSet<Integer>();
+            
+            for (var j = 0; j < people; j++) {
+                int birthday = (int)Math.floor(Math.random() * days);
+                
+                if (birthdays.contains(birthday)) {
+                    success++;
+                    break;
+                }
+                birthdays.add(birthday);
             }
-            birthdays.add(birthday);
-          }
         }
         return success / (double)trials;
     }
