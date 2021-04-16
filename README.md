@@ -1,6 +1,7 @@
 # CMSI 186: Programming Laboratory
 
-Various Java labs I completed for CMSI 186: Programming Laboratory.
+Various Java labs completed for CMSI 186: Programming Laboratory.
+All assignment skeletons written by Dr. Ray Toal & solutions by me (Halle Vogelpohl)
 
 **Pi Estimator:** Uses Monte Carlo simulation to estimate the value of pi.
 
